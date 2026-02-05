@@ -1,5 +1,5 @@
-Name: STATS BAYES SELECTVARS
-Display-Name: Baysian Select Regression Variables
+Name: STATS_BAYES_SELECTVARS
+Display-Name: Bayesian Select Regression Variables
 Dialog-Specs: dialog417.cfe
 Command-Specs: STATS_BAYES_SELECTVARS.xml
 Code-Files: STATS_BAYES_SELECTVARS.R
@@ -11,7 +11,7 @@ Description: This procedure provides a way to select regresion indepen
  dent variables using Bayesian Variable Selection by sampling from pos
  terior distributions.
 Author: Jon K. Peck
-Version: 0.9.0
+Version: 1.0.0
 Product-Version: 28
 Date: 1/7/2026
 Categories: Bayes posterior
