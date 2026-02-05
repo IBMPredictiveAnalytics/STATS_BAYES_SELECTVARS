@@ -1,2 +1,68 @@
-# STATS_BAYES_SELECTVARS
-This extension procedure provides a Bayesian method for selecting the independent variables for linear or generalized linear regression models by comparing their Bayes factors. It uses the ratio of the integrated (i.e., marginal) likelihoods.
+<h2>Introduction</h2>
+<p>This extension procedure provides a Bayesian method for selecting the independent variables for linear or generalized linear regression models by comparing their Bayes factors.  It uses the ratio of the integrated (i.e., marginal) likelihoods.  For linear model coefficients, tt uses an approximation to the Jeffreys-Zellner-Siow prior which uses the Jeffreys prior on sigma and the Zellner-Siow Cauchy prior on the coefficients.  For generalized linear coefficients, it uses CCH with alpha = .5.  Other priors are available in the underlying BAS package but are not currently provided in this extension.
+<p>
+This procedure does not support case weights.   They will be ignored with a warning.
+Cases with missing data will be excluded listwise.
+Variable measurement levels are used to provide appropriate handling for categorical and continuous (scale) variables, so be sure that these are set correctly.  The dialog box
+generates syntax for the STATS BAYES SELECTVARS extension command.
+</p>
+
+<h2>Main Dialog</h2>
+<p><b>Dependent Variable:</b>Select a scale dependent variable except that
+for logistic models, any level is okay.
+
+<p><b>Independent Variables</b>: Select the independent variables to consider for the regression.</p>
+<p><b>Offset</b>: For GLM models, i.e., not linear, you can specify an offset variable, as 	
+a priori known component to be included in the linear predictor; by default the offset is 0.
+<p><b>Family</b>:  the error distribution and link function for exponential family: linear, binomial with logistic link, poisson or gamma.
+<p><b>Forced Variables</b>: Optionally, specify independent variables that will be included
+in all fitted models.  (The intercept is always included.)
+
+<h2>Plots</h2>
+Check the Plots box to produce a set of five plots.
+
+<p>The first is a plot of residuals and fitted values under Bayesian Model Averaging. Ideally, if our model assumptions hold, we will not see outliers or non-constant variance. The second plot shows the cumulative probability of the models in the order that they are sampled. This plot indicates that the cumulative probability is leveling off as each additional model adds only a small increment to the cumulative probability, while earlier, there are typically larger jumps corresponding to discovering a new high probability model. The third plot shows the dimension of each model (the number of regression coefficients including the intercept) versus the log of the marginal likelihood of the model. 
+
+<p>The forth plot shows the marginal posterior inclusion probabilities (pip) for each of the covariates, with marginal pips greater than 0.5 shown in red. The variables with pip > 0.5 correspond to what is known as the median probability model. Variables with high inclusion probabilities are generally important for explaining the data or prediction, but marginal inclusion probabilities may be small if there are predictors that are highly correlated, similar to how p-values may be large in the presence of multicollinearity.
+
+<p>
+The last plot has rows that correspond to each of the variables and intercept, 
+with labels for the variables on the y-axis. The x-axis corresponds to the possible models. 
+These are sorted by their posterior probability from best at the left to worst at the right.
+
+Each column represents one of the models. The variables that are excluded in a model are shown in black for each column, while the variables that are included are colored, with the color related to the log posterior probability. The color of each column is proportional to the log of the posterior probabilities (the lower x-axis) of that model. The log posterior probabilities are  scaled so that the 0 corresponds to the lowest probability model in the top 20, so that the values on the axis correspond to log Bayes factors for comparing each model the lowest probability model in the top 20 models. Models that are the same color have similar log Bayes factors which allows us to view models that are clustered together that have Bayes Factors where the differences are not “worth a bare mention”.
+<h2>Output Tables</h2>
+Three tables are produced.  The first, Top Five Models, based on posterior probability shows the 
+independent 
+variables included, including forced variables.   An X appears in the column to indicate inclusion, and a dash appears to indicate exclusion.  The first column shows the probability that the variable's 
+coefficient is not zero.
+
+<p>The second table, Model Statistics, shows several statistics for each of the top five models.
+The first column is the Bayes factor for each model compared to the highest probability model (hence its Bayes factor is 1), the posterior probabilities of the models, the ordinary R2
+ of the models, the dimension of the models (number of coefficients including the intercept) and the log marginal likelihood under the selected prior distribution. 
+ 
+<p>The third table show summary statistics for the independent and forced variables over 
+the entire set of models using Bayesian model averaging.
+<p>See the references for details on the computations and a description of the Bayes factors.
+
+<h2>Acknowledgements</h2>
+This procedure uses the R BAS package from CRAN by 
+ Merlise Clyde,
+Michael Littman,
+Joyee Ghosh,
+Yingbo Li,
+Betsy Bersson,
+Don van de Bergh, and
+Quanli Wang
+<p>Descriptions in this help text are adapted from the references below.
+
+
+<h2>References</h2>
+<p><a href="https://cran.r-project.org/web/packages/BAS/BAS.pdf"</a>Package "BAS"</p>
+<p><a href="https://cran.r-project.org/web/packages/BAS/vignettes/BAS-vignette.html"</a>
+Using the Bayesian Adaptive Sampling (BAS) Package for Bayesian Model Averaging and Variable Selection<p>
+<p><a href="https://en.wikipedia.org/wiki/Bayes_factor"</a>Bayes Factor</p>
+
+</body>
+  <p style="font-size:80%;">
+&copy; Copyright Jon K Peck 2026</p>
