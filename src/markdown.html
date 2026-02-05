@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>STATS BAYES SELECTVARS Extension Command</title>
+
+<link rel="stylesheet" type="text/css" href="extsyntax.css" />
+
+
+</head>
+
+<body>
+<h1>STATS BAYES SELECTVARS Extension Command</h1>
+
+<h2>Introduction</h2>
+<p>This extension procedure provides a Bayesian method for selecting the independent variables for linear or generalized linear regression models by comparing their Bayes factors.  It uses the ratio of the integrated (i.e., marginal) likelihoods.  For linear model coefficients, tt uses an approximation to the Jeffreys-Zellner-Siow prior which uses the Jeffreys prior on sigma and the Zellner-Siow Cauchy prior on the coefficients.  For generalized linear coefficients, it uses CCH with alpha = .5.  Other priors are available in the underlying BAS package but are not currently provided in this extension.
+<p>
+This procedure does not support case weights.   They will be ignored with a warning.
+Cases with missing data will be excluded listwise.
+Variable measurement levels are used to provide appropriate handling for categorical and continuous (scale) variables, so be sure that these are set correctly.  The dialog box
+generates syntax for the STATS BAYES SELECTVARS extension command.
+</p>
+<H2>Syntax</h2>
+
+<div class="syntax">
+<p>STATS BAYES SELECTVARS</br>
+ DEPVAR = Dependent Variable<sup>&#42;</sup> <br/>
+ INDVARS list of independent variables<br/>
+ FORCEDVARS = list of variables to be always included in models <br/>
+ OFFSET = offset variable for GLM models<br/>
+ FAMILY = LINEAR<sup>&#42;&#42;</sup> LOGISTIC POISSON or GAMMA<br/>
+ <p>/DISPLAY<br/>
+ PLOTS = YES<sup>&#42;&#42;</sup> or NO<br/>
+
+
+<p>/HELP</br>
+STATS BAYES SELECTVARS /HELP displays this information and does nothing else.</p>
+
+<p><sup>&#42;</sup> Required<br/>
+<sup>&#42;&#42;</sup> Default</p>
+</div>
+
+
+<pre class="example"><code>
+STATS BAYES SELECTVARS DEPVAR=salary INDVARS=gender jobtime. 
+</code></pre>
+
+<h2>Details</h2>
+<p>
+<p><strong>DEPVAR</strong> specifies a scale dependent variable except that for logistic
+any level is okay.
+<p><strong>INDVARS</strong> specifies independent variables
+<p><strong>FORCEDVARS</STRONG> Specifies variables to be included in all models.
+<p><strong>FAMILY</strong> specifies the error distribution family and link.
+LOGIT is binomial with logistic link; POISSON and GAMMA wih log link.
+<p><strong>PLOTS</STRONG> specifies whether or not to produce a set of five plots.
+
+<p>The first is a plot of residuals and fitted values under Bayesian Model Averaging. Ideally, if our model assumptions hold, we will not see outliers or non-constant variance. The second plot shows the cumulative probability of the models in the order that they are sampled. This plot indicates that the cumulative probability is leveling off as each additional model adds only a small increment to the cumulative probability, while earlier, there are typically larger jumps corresponding to discovering a new high probability model. The third plot shows the dimension of each model (the number of regression coefficients including the intercept) versus the log of the marginal likelihood of the model. 
+
+<p>The forth plot shows the marginal posterior inclusion probabilities (pip) for each of the covariates, with marginal pips greater than 0.5 shown in red. The variables with pip > 0.5 correspond to what is known as the median probability model. Variables with high inclusion probabilities are generally important for explaining the data or prediction, but marginal inclusion probabilities may be small if there are predictors that are highly correlated, similar to how p-values may be large in the presence of multicollinearity.
+
+<p>
+The last plot has rows that correspond to each of the variables and intercept, 
+with labels for the variables on the y-axis. The x-axis corresponds to the possible models. 
+These are sorted by their posterior probability from best at the left to worst at the right.
+
+Each column represents one of the models. The variables that are excluded in a model are shown in black for each column, while the variables that are included are colored, with the color related to the log posterior probability. The color of each column is proportional to the log of the posterior probabilities (the lower x-axis) of that model. The log posterior probabilities are  scaled so that the 0 corresponds to the lowest probability model in the top 20, so that the values on the axis correspond to log Bayes factors for comparing each model the lowest probability model in the top 20 models. Models that are the same color have similar log Bayes factors which allows us to view models that are clustered together that have Bayes Factors where the differences are not “worth a bare mention”.
+<h2>Output Tables</h2>
+Three tables are produced.  The first, Top Five Models, based on posterior probability shows the 
+independent 
+variables included, including forced variables.   An X appears in the column to indicate inclusion, and a dash appears to indicate exclusion.  The first column shows the probability that the variable's 
+coefficient is not zero.
+
+<p>The second table, Model Statistics, shows several statistics for each of the top five models.
+The first column is the Bayes factor for each model compared to the highest probability model (hence its Bayes factor is 1), the posterior probabilities of the models, the ordinary R2
+ of the models, the dimension of the models (number of coefficients including the intercept) and the log marginal likelihood under the selected prior distribution. 
+ 
+<p>The third table show summary statistics for the independent and forced variables over 
+the entire set of models using Bayesian model averaging.
+<p>See the references for details on the computations and a description of the Bayes factors.
+
+<h2>Acknowledgements</h2>
+This procedure uses the R BAS package from CRAN by 
+ Merlise Clyde,
+Michael Littman,
+Joyee Ghosh,
+Yingbo Li,
+Betsy Bersson,
+Don van de Bergh, and
+Quanli Wang
+<p>Descriptions in this help text are adapted from the references below.
+
+<h2>References</h2>
+<p><a href="https://cran.r-project.org/web/packages/BAS/BAS.pdf"</a>Package "BAS"</p>
+<p><a href="https://cran.r-project.org/web/packages/BAS/vignettes/BAS-vignette.html"</a>
+Using the Bayesian Adaptive Sampling (BAS) Package for Bayesian Model Averaging and Variable Selection<p>
+<p><a href="https://en.wikipedia.org/wiki/Bayes_factor"</a>Bayes Factor</p>
+</body>
+<p style="font-size:80%;">
+<p>&copy; Copyright Jon K Peck 2026</p>
+</html>
+

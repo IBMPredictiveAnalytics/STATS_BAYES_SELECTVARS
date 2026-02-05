@@ -1,0 +1,155 @@
+# /***********************************************************************
+# * Licensed Materials - Property of IBM
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2026
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp.
+# ************************************************************************/
+msgid ""
+msgstr ""
+"Project-Id-Version: STATS_BAYES_SELECTVARS 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-23 15:39+0530\n"
+"PO-Revision-Date: 2026-01-23 15:39+0530\n"
+"Last-Translator: Your Name <your.email@example.com>\n"
+"Language-Team: zh_TW <zh_TW@example.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: STATS_BAYES_SELECTVARS.R:65
+msgid "End of procedure"
+msgstr "程序的結尾"
+
+#: STATS_BAYES_SELECTVARS.R:95
+msgid "Message Number"
+msgstr "訊息號碼"
+
+#: STATS_BAYES_SELECTVARS.R:130
+#, c-format
+msgid "Invalid variable name: %s"
+msgstr "變數名稱無效：%s"
+
+#: STATS_BAYES_SELECTVARS.R:137
+msgid "bayesselectvar"
+msgstr "貝氏變數選擇"
+
+#: STATS_BAYES_SELECTVARS.R:138
+msgid "Bayes Select Vars Notes and Warnings"
+msgstr "貝氏變數選擇的注意事項與警示"
+
+#: STATS_BAYES_SELECTVARS.R:157
+msgid "Bayes Select Variables"
+msgstr "貝氏變數選擇"
+
+#: STATS_BAYES_SELECTVARS.R:163
+msgid "Case weight are ignored by this procedure."
+msgstr "此程序不考慮案例權重。"
+
+#: STATS_BAYES_SELECTVARS.R:179
+msgid "The dependent variable appears in the independent variable list"
+msgstr "依變數出現在自變數清單中"
+
+#: STATS_BAYES_SELECTVARS.R:191
+#, c-format
+msgid "%s is not a valid R variable name.  Please rename it"
+msgstr "%s 不是有效的 R 變數名稱。  請將其重新命名"
+
+#: STATS_BAYES_SELECTVARS.R:198
+#, c-format
+msgid "Results computed by R package BAS, version:%s"
+msgstr "結果由 R 套件 BAS（版本：%s）計算得出"
+
+#: STATS_BAYES_SELECTVARS.R:204
+msgid "Best model definitions may differ across splits."
+msgstr "最佳模型的定義可能因資料分割而異。"
+
+#: STATS_BAYES_SELECTVARS.R:215
+msgid "error fetching data"
+msgstr "提取資料時發生錯誤"
+
+#: STATS_BAYES_SELECTVARS.R:227
+msgid "There are no complete cases in the data"
+msgstr "資料中沒有完整的案例"
+
+#: STATS_BAYES_SELECTVARS.R:245
+msgid "Offset is not valid for linear models"
+msgstr "偏置項不適用於線性模型"
+
+#: STATS_BAYES_SELECTVARS.R:260 STATS_BAYES_SELECTVARS.R:261
+msgid "error estimating equation"
+msgstr "預估方程式時發生錯誤"
+
+#: STATS_BAYES_SELECTVARS.R:268
+#, c-format
+msgid "Family: %s"
+msgstr "誤差分布族：%s"
+
+#: STATS_BAYES_SELECTVARS.R:299
+msgid "Top Models (Up to Five)"
+msgstr "最佳模型（最多五個）"
+
+#: STATS_BAYES_SELECTVARS.R:302
+#, c-format
+msgid ""
+"Dependent variable: %s\n"
+"X = variable included, - = variable excluded\n"
+"%s"
+msgstr ""
+"依變數：%s\n"
+"X = 已包含變數，- = 未包含變數\n"
+"%s"
+
+#: STATS_BAYES_SELECTVARS.R:307
+msgid "Bayes Factor vs. Largest Marginal Likelihood"
+msgstr "貝氏因子與最大邊際似然值的差異分析"
+
+#: STATS_BAYES_SELECTVARS.R:307
+msgid "Posterior Probabilities"
+msgstr "後驗機率"
+
+#: STATS_BAYES_SELECTVARS.R:307
+msgid "R-Squared"
+msgstr "R 平方"
+
+#: STATS_BAYES_SELECTVARS.R:308
+msgid "Number of Variables"
+msgstr "變數數目"
+
+#: STATS_BAYES_SELECTVARS.R:308
+msgid "Log Marginal Likelihood (Log BF vs Intercept Only Model"
+msgstr "對數邊際似然值（對數貝氏因子模型與僅含截距項模型的比較）"
+
+#: STATS_BAYES_SELECTVARS.R:314
+msgid "Model Statistics"
+msgstr "模型統計量"
+
+#: STATS_BAYES_SELECTVARS.R:321
+msgid "(Intercept)"
+msgstr "（截距）"
+
+#: STATS_BAYES_SELECTVARS.R:322
+msgid "Mean"
+msgstr "平均數"
+
+#: STATS_BAYES_SELECTVARS.R:322
+msgid "Std. Dev"
+msgstr "標準 偏差"
+
+#: STATS_BAYES_SELECTVARS.R:322
+msgid "p(beta != 0"
+msgstr "p(β≠0)"
+
+#: STATS_BAYES_SELECTVARS.R:325
+msgid "Posterior Coefficients"
+msgstr "後驗係數"
+
+#: STATS_BAYES_SELECTVARS.R:328
+#, c-format
+msgid "Number of cases: %s"
+msgstr "案例數：%s"
