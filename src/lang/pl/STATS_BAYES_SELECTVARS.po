@@ -1,0 +1,157 @@
+# /***********************************************************************
+# * Licensed Materials - Property of IBM
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2026
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp.
+# ************************************************************************/
+msgid ""
+msgstr ""
+"Project-Id-Version: STATS_BAYES_SELECTVARS 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-23 15:39+0530\n"
+"PO-Revision-Date: 2026-01-23 15:39+0530\n"
+"Last-Translator: Your Name <your.email@example.com>\n"
+"Language-Team: pl <pl@example.com>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: STATS_BAYES_SELECTVARS.R:65
+msgid "End of procedure"
+msgstr "Koniec procedury"
+
+#: STATS_BAYES_SELECTVARS.R:95
+msgid "Message Number"
+msgstr "Numer komunikatu"
+
+#: STATS_BAYES_SELECTVARS.R:130
+#, c-format
+msgid "Invalid variable name: %s"
+msgstr "Niepoprawna nazwa zmiennej: %s"
+
+#: STATS_BAYES_SELECTVARS.R:137
+msgid "bayesselectvar"
+msgstr "bayesselectvar"
+
+#: STATS_BAYES_SELECTVARS.R:138
+msgid "Bayes Select Vars Notes and Warnings"
+msgstr "Wybrane zmienne Bayesa – Uwagi i ostrzeżenia"
+
+#: STATS_BAYES_SELECTVARS.R:157
+msgid "Bayes Select Variables"
+msgstr "Wybrane zmienne Bayesa"
+
+#: STATS_BAYES_SELECTVARS.R:163
+msgid "Case weight are ignored by this procedure."
+msgstr "Ta procedura ignoruje wagi obserwacji"
+
+#: STATS_BAYES_SELECTVARS.R:179
+msgid "The dependent variable appears in the independent variable list"
+msgstr "Zmienna zależna pojawia się na liście zmiennych niezależnych"
+
+#: STATS_BAYES_SELECTVARS.R:191
+#, c-format
+msgid "%s is not a valid R variable name.  Please rename it"
+msgstr "%s nie jest poprawną nazwą zmiennej R.  Zmień nazwę"
+
+#: STATS_BAYES_SELECTVARS.R:198
+#, c-format
+msgid "Results computed by R package BAS, version:%s"
+msgstr "Wyniki obliczone za pomocą pakietu R BAS, wersja: %s"
+
+#: STATS_BAYES_SELECTVARS.R:204
+msgid "Best model definitions may differ across splits."
+msgstr "Najlepsze definicje modeli mogą się różnić w zależności od podziałów."
+
+#: STATS_BAYES_SELECTVARS.R:215
+msgid "error fetching data"
+msgstr "błąd pobierania danych"
+
+#: STATS_BAYES_SELECTVARS.R:227
+msgid "There are no complete cases in the data"
+msgstr "W danych nie ma kompletnych przypadków"
+
+#: STATS_BAYES_SELECTVARS.R:245
+msgid "Offset is not valid for linear models"
+msgstr "Przesunięcie nie jest ważne dla modeli liniowych"
+
+#: STATS_BAYES_SELECTVARS.R:260 STATS_BAYES_SELECTVARS.R:261
+msgid "error estimating equation"
+msgstr "równanie szacowania błędu"
+
+#: STATS_BAYES_SELECTVARS.R:268
+#, c-format
+msgid "Family: %s"
+msgstr "Rodzina: %s"
+
+#: STATS_BAYES_SELECTVARS.R:299
+msgid "Top Models (Up to Five)"
+msgstr "Najlepsze modele (do pięciu)"
+
+#: STATS_BAYES_SELECTVARS.R:302
+#, c-format
+msgid ""
+"Dependent variable: %s\n"
+"X = variable included, - = variable excluded\n"
+"%s"
+msgstr ""
+"Zmienna zależna: %s\n"
+"X = zmienna uwzględniona, - = zmienna wykluczona\n"
+"%s"
+
+#: STATS_BAYES_SELECTVARS.R:307
+msgid "Bayes Factor vs. Largest Marginal Likelihood"
+msgstr "Współczynnik Bayesa kontra największa wiarygodność marginalna"
+
+#: STATS_BAYES_SELECTVARS.R:307
+msgid "Posterior Probabilities"
+msgstr "Prawdopodobieństwa a posteriori"
+
+#: STATS_BAYES_SELECTVARS.R:307
+msgid "R-Squared"
+msgstr "R-kwadrat:"
+
+#: STATS_BAYES_SELECTVARS.R:308
+msgid "Number of Variables"
+msgstr "Liczba zmiennych"
+
+#: STATS_BAYES_SELECTVARS.R:308
+msgid "Log Marginal Likelihood (Log BF vs Intercept Only Model"
+msgstr ""
+"Logarytm marginalnej wiarygodności (log BF kontra model wyłącznie z punktem "
+"przecięcia"
+
+#: STATS_BAYES_SELECTVARS.R:314
+msgid "Model Statistics"
+msgstr "Statystyki modelu"
+
+#: STATS_BAYES_SELECTVARS.R:321
+msgid "(Intercept)"
+msgstr "(Stała)"
+
+#: STATS_BAYES_SELECTVARS.R:322
+msgid "Mean"
+msgstr "Średnia"
+
+#: STATS_BAYES_SELECTVARS.R:322
+msgid "Std. Dev"
+msgstr "Stand. Odchylenie"
+
+#: STATS_BAYES_SELECTVARS.R:322
+msgid "p(beta != 0"
+msgstr "p(beta != 0"
+
+#: STATS_BAYES_SELECTVARS.R:325
+msgid "Posterior Coefficients"
+msgstr "Współczynniki a posteriori"
+
+#: STATS_BAYES_SELECTVARS.R:328
+#, c-format
+msgid "Number of cases: %s"
+msgstr "Liczba obserwacji: %s"

@@ -1,0 +1,20 @@
+Name: STATS BAYES SELECTVARS
+Display-Name: Baysian Select Regression Variables
+Dialog-Specs: dialog417.cfe
+Command-Specs: STATS_BAYES_SELECTVARS.xml
+Code-Files: STATS_BAYES_SELECTVARS.R
+Misc-Files: extsyntax.css,stats_bayes_selectvars.htm,LICENSE,markdown.
+ html
+Summary: Select regression variables based on probability of nonzero e
+ ffect according to stock pirior distribution
+Description: This procedure provides a way to select regresion indepen
+ dent variables using Bayesian Variable Selection by sampling from pos
+ terior distributions.
+Author: Jon K. Peck
+Version: 0.9.0
+Product-Version: 28
+Date: 1/7/2026
+Categories: Bayes posterior
+Plugins: R
+R-Packages: BAS
+Translation-Catalogues: lang
